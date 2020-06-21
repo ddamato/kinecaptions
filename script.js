@@ -1,3 +1,5 @@
+// https://developers.google.com/youtube/iframe_api_reference#Events
+
 function getCaptions(videoId) {
   const url = `http://video.google.com/timedtext?lang=en&v=${videoId}`;
   return fetch(url).then((res) => res.text()).then((xml) => {
@@ -26,3 +28,4 @@ function formatText(node) {
 getCaptions('1Jwo5qc78QU').then((captions) => {
   console.log(captions);
 });
+
